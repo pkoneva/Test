@@ -5,9 +5,6 @@ using namespace std;
 
 
 class Vector3D {
-protected:
-	
-
 public:
 	double X, Y, Z;
 	Vector3D() {
@@ -91,7 +88,7 @@ public:
 		}
 		else if (S.end.X - S.start.X == 0) {
 			if (T.end.Y - T.start.Y != 0) {
-				l =  (T.end.Y - T.start.Y)/ (S.end.Y - S.start.Y);
+				l =  (T.end.Y - T.start.Y) / (S.end.Y - S.start.Y);
 				return (T.end.Z - T.start.Z == l * (S.end.Z - S.start.Z));
 			}
 			else return (T.end.Y - T.start.Y == 0); 
@@ -110,8 +107,6 @@ public:
 			else throw "No intersections. Two different points are given.";
 		}
 		else if (point_S || point_T) {
-			//if (cos(Segment3D(T.start, S.start), Segment3D(T.end, S.end)) == -1) return (point_S == 1 ? S.start : T.start);
-			//if (sqrt(SquaredNorm(Segment3D(T.start, S.start))+ sqrt(SquaredNorm(Segment3D(T.end, S.end))) == sqrt(SquaredNorm(Segment3D(T.end, S.end)))
 			if (Norm(Segment3D(T.start, S.start)) + Norm(Segment3D(T.end, S.end)) == Norm(Segment3D(T)) ||
 				Norm(Segment3D(T.start, S.start)) + Norm(Segment3D(T.end, S.end)) == Norm(Segment3D(S)))
 				return (point_S == 1 ? S.start : T.start);
@@ -176,8 +171,8 @@ public:
 }; 
 
 int main() {
-	Vector3D a;
-	/*Vector3D b(2, 3, 4);
+	/*Vector3D a;
+	Vector3D b(2, 3, 4);
 	Vector3D c(2, 4, -3);
 	Vector3D d(0, 0, -1);
 	Vector3D e(0, 0, -2);
@@ -186,10 +181,12 @@ int main() {
 	Vector3D h(0, 0, -3);
 	Segment3D t(f, g);
 	Segment3D s(g, a);*/
+	
 	/*Vector3D p1( 0.5, 0.7,1);
 	Vector3D p2(3.9, 2.2,2);
 	Vector3D p3( 1.2, 2.4,1);
 	Vector3D p4(2.9, 0.9, 2);*/
+	
 	Vector3D p1(1, 1, 1);
 	Vector3D p2(3, 3, 3);
 	Vector3D p3(1, 1, 1);
